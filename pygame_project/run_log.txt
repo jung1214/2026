@@ -1,0 +1,110 @@
+combined_game.py 실행 기록 (손 + 몸 관절 동시 인식)
+시작: 2026-10-25 16:04:59   실행 시간: 29.2초
+
+[환경]
+Python 3.13.7
+pygame 2.6.1 | pygame-particles ? | sounddevice 0.5.6 | mediapipe 1.0.1 | opencv 5.0.0 | numpy 2.5.3
+
+[라이브러리별 실행 확인]
+pygame           : 창 실행 535프레임
+pygame-particles : 정상 / 파티클 170개 발사
+sounddevice      : 마이크 마이크 배열(2- 디지털 마이크용 인텔® 스마트 사운드  / 콜백 1256회 / 최대 음량(RMS) 0.011 / 최대 피크 0.023
+mediapipe(손)    : 정상 / 손 감지 259프레임
+mediapipe(몸)    : 정상 / 자세 감지 529프레임
+카메라 처리      : 535프레임
+효과음(mixer)    : ON
+손그림 캐릭터    : 사용 중 (external)
+
+[손/몸 입력 소스별 제스처 인식 성공 횟수]
+손으로 인식: 1   몸으로 인식: 14
+
+[효과 발동 횟수]
+APPEAR: 1
+BALL_DODGE: 11
+BALL_HIT: 1
+CLAP: 0
+GESTURE_FAIL: 0
+GESTURE_OK: 15
+MOVE: 39
+PLAYER_OUT: 0
+RESET: 0
+ROUND_START: 1
+SCREENSHOT: 0
+
+[공 피하기 결과]
+최종 점수: 20
+최고 점수: 100
+
+[이벤트 기록]
+16:04:59 APPEAR P1
+16:05:00 MOVE P1
+16:05:00 GESTURE_OK P1 LEFT body
+16:05:00 MOVE P1
+16:05:00 MOVE P1
+16:05:00 MOVE P1
+16:05:01 MOVE P1
+16:05:01 GESTURE_OK P1 STOP body
+16:05:01 MOVE P1
+16:05:02 MOVE P1
+16:05:02 MOVE P1
+16:05:02 MOVE P1
+16:05:02 GESTURE_OK P1 LEFT body
+16:05:03 MOVE P1
+16:05:03 ROUND_START
+16:05:03 MOVE P1
+16:05:03 GESTURE_OK P1 RIGHT body
+16:05:03 MOVE P1
+16:05:03 GESTURE_OK P1 STOP body
+16:05:08 GESTURE_OK P1 STOP hand
+16:05:09 GESTURE_OK P1 LEFT body
+16:05:09 MOVE P1
+16:05:09 MOVE P1
+16:05:10 MOVE P1
+16:05:10 MOVE P1
+16:05:10 MOVE P1
+16:05:11 MOVE P1
+16:05:11 MOVE P1
+16:05:11 MOVE P1
+16:05:12 MOVE P1
+16:05:12 GESTURE_OK P1 LEFT body
+16:05:12 MOVE P1
+16:05:12 GESTURE_OK P1 STOP body
+16:05:12 MOVE P1
+16:05:13 GESTURE_OK P1 LEFT body
+16:05:13 MOVE P1
+16:05:13 MOVE P1
+16:05:13 MOVE P1
+16:05:13 MOVE P1
+16:05:14 MOVE P1
+16:05:14 BALL_DODGE
+16:05:15 MOVE P1
+16:05:15 GESTURE_OK P1 LEFT body
+16:05:15 MOVE P1
+16:05:15 GESTURE_OK P1 LEFT body
+16:05:15 MOVE P1
+16:05:15 MOVE P1
+16:05:16 GESTURE_OK P1 STOP body
+16:05:16 MOVE P1
+16:05:16 BALL_DODGE
+16:05:17 BALL_DODGE
+16:05:19 BALL_DODGE
+16:05:23 BALL_DODGE
+16:05:24 MOVE P1
+16:05:24 BALL_DODGE
+16:05:24 BALL_DODGE
+16:05:24 MOVE P1
+16:05:24 MOVE P1
+16:05:24 BALL_DODGE
+16:05:25 BALL_DODGE
+16:05:27 BALL_DODGE
+16:05:27 BALL_HIT P1
+16:05:28 MOVE P1
+16:05:28 GESTURE_OK P1 STOP body
+16:05:28 BALL_DODGE
+16:05:28 MOVE P1
+16:05:28 GESTURE_OK P1 STOP body
+16:05:28 MOVE P1
+
+※ 손 모양이 뚜렷하면 손을, 안 보이거나 애매하면 몸(어깨·엉덩이·손목) 자세를 자동으로 사용함
+※ 공 피하기 게임에는 점프가 없음(좌우 이동으로만 피함), 공에 한 번 맞으면 즉시 사망함
+※ 카메라 영상과 마이크 소리는 저장하지 않음 (음량 수치만 사용)
